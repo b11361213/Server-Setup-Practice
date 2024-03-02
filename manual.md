@@ -23,10 +23,17 @@ IP: 192.168.2.254
 Netmask: /24
 ---
 ```
+- Software Selection  
+`Server` (**without GUI**)
+
+- Installatoin Destination  
+`VBOX Harddisk`
+
+- Locale, Timezone  
+`en_US`, `Asia/Taipei`
+
 - User  
 `router-guest`, `root`
-- Locale, Timezone
-`en_US`, `Asia/Taipei`
 ---
 
 ### S1
@@ -39,10 +46,17 @@ Default Gateway: 192.168.1.254
 Netmask: /24
 ---
 ```
+- Software Selection  
+`Server` (**without GUI**)
+
+- Installatoin Destination  
+`VBOX Harddisk`
+
+- Locale, Timezone  
+`en_US`, `Asia/Taipei`
+
 - User  
 `s1-guest`, `root`
-- Locale, Timezone
-`en_US`, `Asia/Taipei`
 ---
 
 ### S2
@@ -55,10 +69,17 @@ Default Gateway: 192.168.2.254
 Netmask: /24
 ---
 ```
+- Software Selection  
+`Server` (**without GUI**)
+
+- Installatoin Destination  
+`VBOX Harddisk`
+
+- Locale, Timezone  
+`en_US`, `Asia/Taipei`
+
 - User  
 `s2-guest`, `root`
-- Locale, Timezone
-`en_US`, `Asia/Taipei`
 ---
 
 ## VirtualBox Setup Manual
@@ -137,6 +158,8 @@ ipv4.method manual
 ---
 
 ### System config
+
+#### sysctl
 `sysctl`
 
 - `sysctl net.ipv4.ip_forward`: check config
@@ -146,6 +169,11 @@ ipv4.method manual
 ```
 net.ipv4.ip_forward = 1
 ```
+
+#### getenforce / setenforce (SELinux)
+`getenforce`
+
+`setenforce`: `[ 0 | 1 | Permissive | Enforcing ]`
 
 ---
 
@@ -162,14 +190,41 @@ net.ipv4.ip_forward = 1
 
 | Keyboard Shortcut | Description |
 | -- | -- |
-| `vim` | Open vim editor |
 | `cat` | Print text file content |
 | `echo >` | Overwrite content to file |
 | `echo >>` | Append content to file |
-| `grep <keyword>` | Filter output |
 | `more` | |
 | `less` | |
+| `vim` | Open vim editor |
+| `grep <keyword>` | Filter output |
+| `chmod` | Change file permission |
 
+---
+
+| Keyboard Shortcut | Description |
+| -- | -- |
+| `pwd` | Get current path |
+| `whoami` | Get current user |
+| `ls` | List file |
+| `cd` | Change Dictionary |
+| `shutdown` | |
+| `reboot` | |
+
+---
+
+- `chmod`
+
+    - `-v`: `--verbose`
+    
+    - `-r`: `--recursive`
+
+```
+chmod [<user> <operator> <permission>] <file>
+
+user: u (owner), g (group user), o (other user), a (all user)
+operator: +, -, =
+permission: r (read), w (write), x (execute)
+```
 ---
 
 #### Console command
@@ -178,3 +233,8 @@ net.ipv4.ip_forward = 1
 #### Network command
 - [鳥哥私房菜 - 第五章、建立與檢查網路連線 | 5.2.1、固定網路參數設定方式(manual)](https://linux.vbird.org/linux_server/rocky9/0160setnetwork.php#5.2.1)
 - [nmcli 修改網卡設定](https://dywang.csie.cyut.edu.tw/dywang/rhel7/node21.html)
+
+#### Useful command
+- [Linux教學：chmod指令](https://weikaiwei.com/linux/chmod-commands/)
+
+####

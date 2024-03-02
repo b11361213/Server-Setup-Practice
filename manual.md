@@ -93,7 +93,23 @@ Hard disk: 100GB (Don't Pre-allocate Full Size)
 ## Linux Configuration
 
 ### Interface config
+
+#### ifconfig
 `ifconfig [interface]`: check network interface  
+
+#### nmcli
+```
+c[onnnection]   NetworkManager's connections
+- d[own]
+- u[p]
+- m[odify]
+- s[how]
+
+d[evice]        Display device managed by NetworkManager
+
+c -> con -> connection
+m -> mod -> modify
+```
 
 `nmcli device`: check network devices  
 
@@ -121,7 +137,15 @@ ipv4.method manual
 ---
 
 ### System config
+`sysctl`
 
+- `sysctl net.ipv4.ip_forward`: check config
+
+`/etc/sysctl.d/sysctl.conf`: system config file, will work after reboot
+
+```
+net.ipv4.ip_forward = 1
+```
 
 ---
 

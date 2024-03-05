@@ -118,6 +118,13 @@ Hard disk: 100GB (Don't Pre-allocate Full Size)
 #### ifconfig
 `ifconfig [interface]`: check network interface  
 
+#### ip
+`ip link show <interface>`
+
+- `-s`
+
+`ip addr show <interface>`
+
 #### nmcli
 ```
 c[onnnection]   NetworkManager's connections
@@ -145,6 +152,15 @@ ipv4.method manual
 ```
 
 - `nmcli connection show <interface> | grep ipv4`
+```
+## lower case: config value
+... .gateway
+... .address
+
+## uppper case: current setting
+... .GATEWAY
+... .ADDRESS
+```
 
 - config location: `/etc/NetworkManager/system-connections/<interface>.nmconnectoin`
 
@@ -152,6 +168,8 @@ ipv4.method manual
 
 ### Hostname config
 `hostnamectl`: get hostname info
+
+- `hostnamectl set-hostname <hostname>`
 
 `hostname <hostname>`: get, set hostname
 

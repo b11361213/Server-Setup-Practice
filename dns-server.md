@@ -33,3 +33,11 @@ $TTL 86400
 s11361213.mcu.edu.tw.               IN                  SOA             dns.s11361213.mcu.edu.tw.       sysop.s11361213.mcu.edu.tw. ( ... )
 
 ```
+
+`/etc/named.conf` add
+```
+zone "s11361213.mcu.edu.tw" IN {
+    type master;
+    file "named.s11361213.mcu.edu.tw;
+};
+```

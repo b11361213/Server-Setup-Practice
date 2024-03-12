@@ -86,6 +86,16 @@ proto=<proto>: \
 toaddr=<addr>: \
 toport=<port>:
 ```
+---
+add NAT (Network Address Translation) to sub machine
+```
+$ firewall-cmd --permanent --add-masquerade
+
+$ firewall-cmd --permanent --zone=public --add-source=192.168.1.0/24
+$ firewall-cmd --permanent --zone=public --add-source=192.168.2.0/24
+
+$ firewall-cmd --reload
+```
 
 ---
 

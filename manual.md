@@ -189,9 +189,15 @@ net.ipv4.ip_forward = 1
 ```
 
 #### getenforce / setenforce (SELinux)
-`getenforce`
+`sestatus`, `getenforce`: get SELinux status
+
+- Disable SELinux Temporarily
 
 `setenforce`: `[ 0 | 1 | Permissive | Enforcing ]`
+
+- Disable SELinux Permanently
+
+`/etc/sysconfig/selinux`
 
 ---
 

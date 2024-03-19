@@ -109,4 +109,11 @@ $ nslookup
 ```
 
 ### Check current DNS server
+- add DNS server on client
+```
+nmcli con mod enp0s3 \
+ipv4.dns 192.168.1.254
+```
+
+- DNS server record
 `/etc/resolv.conf`

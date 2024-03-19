@@ -34,6 +34,9 @@ Netmask: /24
 
 - User  
 `router-guest`, `root`
+
+- Hostname
+`router.s11361213.mcu.edu.tw`
 ---
 
 ### S1
@@ -57,6 +60,9 @@ Netmask: /24
 
 - User  
 `s1-guest`, `root`
+
+- Hostname
+`s1.s11361213.mcu.edu.tw`
 ---
 
 ### S2
@@ -80,7 +86,35 @@ Netmask: /24
 
 - User  
 `s2-guest`, `root`
+
+- Hostname
+`s2.s11361213.mcu.edu.tw`
 ---
+
+### C1
+- Network interface
+```
+## 01
+Method:
+IP:
+Default Gateway:
+Netmask:
+---
+```
+- Software Selection  
+`Server` (**without GUI**)
+
+- Installatoin Destination  
+`VBOX Harddisk`
+
+- Locale, Timezone  
+`en_US`, `Asia/Taipei`
+
+- User  
+`c1-guest`, `root`
+
+- Hostname
+`c1.s11361213.mcu.edu.tw`
 
 ## VirtualBox Setup Manual
 ```
@@ -105,6 +139,12 @@ Hard disk: 100GB (Don't Pre-allocate Full Size)
     Internal Network
     ```
     - S1, S2
+    ```
+    Interface 1:
+    Internal Network
+    ```
+
+    - C1
     ```
     Interface 1:
     Internal Network

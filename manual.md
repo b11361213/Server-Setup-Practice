@@ -151,8 +151,11 @@ Netmask:
 
 ## VirtualBox Setup Manual
 ```
-Machine name: router-guest, centrouter-guest s1-guest, s2-guest, c1-guest
+Machine-1 name: router-guest, s1-guest, s2-guest, c1-guest
 ISO image: Rocky-Linux-9.3-x86-64-dvd
+---
+Machine-2 name: centrouter-guest
+ISO image: CentOS-Stream-8-x86_64-dvd1
 
 Memory: 1024MB (1GB)
 CPU: 1
@@ -227,16 +230,19 @@ m -> mod -> modify
 - `nmcli connection modify <interface> >`
 ```
 nmcli connection modify enp0s3 \
-ipv4.address 192.168.1.1/24 \
+ipv4.addresses 192.168.1.1/24 \
 ipv4.gateway 192.168.1.254 \
-ipv4.method manual
+ipv4.method manual \
+ \
+ipv4.dns 192.168.1.254 \
+ipv4.dns-search s11361213.mcu.edu.tw
 ```
 
 - `nmcli connection show <interface> | grep ipv4`
 ```
 ## lower case: config value
 ... .gateway
-... .address
+... .addresses
 
 ## uppper case: current setting
 ... .GATEWAY
@@ -245,6 +251,14 @@ ipv4.method manual
 
 - config location: `/etc/NetworkManager/system-connections/<interface>.nmconnectoin`
 
+### nmtui
+add network connection for wireless network
+```
+nmtui
+-> Activate a connection
+-> enp0s3
+-> Activate
+```
 ---
 
 ### Hostname config
@@ -338,6 +352,7 @@ permission: r (read), w (write), x (execute)
 #### Network command
 - [鳥哥私房菜 - 第五章、建立與檢查網路連線 | 5.2.1、固定網路參數設定方式(manual)](https://linux.vbird.org/linux_server/rocky9/0160setnetwork.php#5.2.1)
 - [nmcli 修改網卡設定](https://dywang.csie.cyut.edu.tw/dywang/rhel7/node21.html)
+- [command line - How to connect to wifi in CentOS 7(CLI)(no GUI)? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/370318/how-to-connect-to-wifi-in-centos-7clino-gui/447901#447901)
 
 #### Useful command
 - [Linux教學：chmod指令](https://weikaiwei.com/linux/chmod-commands/)

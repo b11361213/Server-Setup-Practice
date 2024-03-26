@@ -98,6 +98,12 @@ $ firewall-cmd --reload
 ```
 
 ---
+add DNS service to home zone
+```
+$ firewall-cmd --permanent --zone=home --add-service=dns
+```
+
+---
 
 ### systemctl
 

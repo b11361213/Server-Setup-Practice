@@ -68,7 +68,7 @@ Netmask: /24
 - User  
 `centrouter-guest`, `root`
 
-- Hostname
+- Hostname  
 `centrouter.s11361213.mcu.edu.tw`
 ---
 
@@ -94,7 +94,7 @@ Netmask: /24
 - User  
 `s1-guest`, `root`
 
-- Hostname
+- Hostname  
 `s1.s11361213.mcu.edu.tw`
 ---
 
@@ -120,7 +120,7 @@ Netmask: /24
 - User  
 `s2-guest`, `root`
 
-- Hostname
+- Hostname  
 `s2.s11361213.mcu.edu.tw`
 ---
 

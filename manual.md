@@ -2,9 +2,7 @@
 
 ## Environment list
 
-### Router
-- Hostname  
-`router.s11361213.mcu.edu.tw`
+<!-- ### Router
 - Network interface
 ```
 ## 01
@@ -37,6 +35,41 @@ Netmask: /24
 
 - Hostname
 `router.s11361213.mcu.edu.tw`
+--- -->
+
+### CentOS Router
+- Network interface
+```
+## 01
+Method: Bridge
+---
+
+## 02
+Method: manual
+IP: 192.168.1.254
+Netmask: /24
+---
+
+## 03
+Method: manual
+IP: 192.168.2.254
+Netmask: /24
+---
+```
+- Software Selection  
+`Server` (**without GUI**)
+
+- Installatoin Destination  
+`VBOX Harddisk`
+
+- Locale, Timezone  
+`en_US`, `Asia/Taipei`
+
+- User  
+`centrouter-guest`, `root`
+
+- Hostname
+`centrouter.s11361213.mcu.edu.tw`
 ---
 
 ### S1
@@ -118,7 +151,7 @@ Netmask:
 
 ## VirtualBox Setup Manual
 ```
-Machine name: router-guest, s1-guest, s2-guest
+Machine name: router-guest, centrouter-guest s1-guest, s2-guest, c1-guest
 ISO image: Rocky-Linux-9.3-x86-64-dvd
 
 Memory: 1024MB (1GB)
@@ -130,10 +163,18 @@ Hard disk: 100GB (Don't Pre-allocate Full Size)
 
 ### Machine setting
 - Network
-    - router
+    <!-- - router
     ```
     Interface 1:
     NAT
+
+    Interface 2, 3:
+    Internal Network
+    ``` -->
+    - centrouter
+    ```
+    Interface 1:
+    Bridge
 
     Interface 2, 3:
     Internal Network

@@ -238,6 +238,8 @@ ipv4.dns 192.168.1.254 \
 ipv4.dns-search s11361213.mcu.edu.tw
 ```
 
+`connection.autoconnect [yes/no]`: auto connection to network (dhcp, bridge...)
+
 - `nmcli connection show <interface> | grep ipv4`
 ```
 ## lower case: config value

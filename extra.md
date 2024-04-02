@@ -1,5 +1,16 @@
 # Extra Content
 ## System Configuration
+### System config
+`systemctl start [service]`  
+
+`systemctl restart [service]`  
+
+`systemctl status [service]`  
+
+`systemctl enable [service]`: default enable service when boot up  
+
+---
+
 ### Network config
 #### nmcli
 delete connection
@@ -37,6 +48,11 @@ ssh [username] @ [IP address]
     ```
 
 ---
+
+- `vim`
+    - `:voh`: turn off highlighting  
+    [highlight - Vim clear last search highlighting - Stack Overflow](https://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting/657457#657457)
+
 
 #### Network config
 - [3.3.5. 使用 nmcli 建立和修改連接組態集 Red Hat Enterprise Linux 7 | Red Hat Customer Portal](https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/7/html/networking_guide/sec-creating_and_modifying_a_connection_profile_with_nmcli)

@@ -19,8 +19,9 @@
 
 installed, using service list:  
 ```
-named, dhcp, dhcrelay
-rsyslog
+firewalld ->
+named ->
+dhcp, dhcrelay, rsyslog
 ```
 
 ---

@@ -85,9 +85,9 @@ ssh [username] @ [IP address]
 
 ---
 
-` `dnf`
+- `dnf`  
     - `install`: install packages  
-    - `-y`: automatically answer yes for all questions
+    - `-y`: automatically answer yes for all questions  
 
 ---
 

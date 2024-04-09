@@ -44,6 +44,8 @@ mail                                IN                  CNAME           router
 s1                                  IN                  A               192.168.1.1
 s2                                  IN                  A               192.168.2.1
 
+www                                 IN                  A               192.168.2.1
+
 ```
 
 ---

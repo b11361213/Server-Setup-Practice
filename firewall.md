@@ -72,19 +72,19 @@
 - `--query-masquerade`
 
 ```sh
---add-forward-port= \
-port=<port>: \
-proto=<protocol>: \
+--add-forward-port=\
+port=<port>:\
+proto=<protocol>:\
 
 toaddr=<addr>
 ```
 ```sh
---add-forward-port= \
-port=<port>: \
-proto=<proto>: \
+--add-forward-port=\
+port=<port>:\
+proto=<proto>:\
 
-toaddr=<addr>: \
-toport=<port>:
+toaddr=<addr>:\
+toport=<port>
 ```
 ---
 add NAT (Network Address Translation) to sub machine

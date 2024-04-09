@@ -6,6 +6,7 @@
 ```mermaid
 flowchart RL
     net-1 <-- DHCP relay \n DNS query --> router-n1
+    router-n1 -- DHCP request --> S1
     net-2 <-- DHCP relay <br> DNS query --> router-n2
     bridge-1 <--> router-b0
 
@@ -18,12 +19,15 @@ flowchart RL
         cent router)
     router-b0(
         enp0s3
+        FW public
         bridge-0)
     router-n1(
         enp0s8
+        FW home
         net-1)
     router-n2(
         enp0s9
+        FW home
         net-2)
     router-b0 <--> router
     router-n1 <--> router <--> router-n2
@@ -39,6 +43,7 @@ flowchart RL
 
     subgraph net-2
     S2(
+        Apache
         S2)
     C2(
         C2)
@@ -48,8 +53,8 @@ flowchart RL
 ## Service list
 | Host | Service | Service name |
 | -- |-- | -- |
-| Router | DNS, DHCP Relay | `named`, `dhcrelay` |`
+| Router | Firewall, DNS, DHCP Relay | `firewalld`, `named`, `dhcrelay` |`
 | S1 | DHCP | `dhcpd` |
-| S2 | | |
-| C1 | | |
-| C2 | | |
+| S2 | Apache | `httpd`, `httpd-tools` |
+| C1 | None (client) | |
+| C2 | None (client) | |

@@ -1,5 +1,51 @@
 # Environment Setup Manual
 
+## VirtualBox Setup Manual
+```
+Machine-1 name: router-guest, s1-guest, s2-guest, c1-guest, c2-guest
+ISO image: Rocky-Linux-9.3-x86-64-dvd
+---
+Machine-2 name: centrouter-guest
+ISO image: CentOS-Stream-8-x86_64-dvd1
+
+Memory: 1024MB (1GB)
+CPU: 1
+
+Hard disk: 100GB (Don't Pre-allocate Full Size)
+```
+---
+
+### Machine setting
+- Network
+    <!-- - router
+    ```
+    Interface 1:
+    NAT
+
+    Interface 2, 3:
+    Internal Network
+    ``` -->
+    - centrouter
+    ```
+    Interface 1:
+    Bridge
+
+    Interface 2, 3:
+    Internal Network
+    ```
+    - S1, S2
+    ```
+    Interface 1:
+    Internal Network
+    ```
+
+    - C1, C2
+    ```
+    Interface 1:
+    Internal Network
+    ```
+---
+
 ## Environment list
 
 <!-- ### Router
@@ -124,7 +170,7 @@ Netmask: /24
 `s2.s11361213.mcu.edu.tw`
 ---
 
-### C1
+### C1, C2
 - Network interface
 ```
 ## 01
@@ -144,56 +190,16 @@ Netmask:
 `en_US`, `Asia/Taipei`
 
 - User  
-`c1-guest`, `root`
+C1  
+`c1-guest`, `root`  
+C2  
+`c1-guest`, `root`  
 
-- Hostname
-`c1.s11361213.mcu.edu.tw`
-
-## VirtualBox Setup Manual
-```
-Machine-1 name: router-guest, s1-guest, s2-guest, c1-guest
-ISO image: Rocky-Linux-9.3-x86-64-dvd
----
-Machine-2 name: centrouter-guest
-ISO image: CentOS-Stream-8-x86_64-dvd1
-
-Memory: 1024MB (1GB)
-CPU: 1
-
-Hard disk: 100GB (Don't Pre-allocate Full Size)
-```
----
-
-### Machine setting
-- Network
-    <!-- - router
-    ```
-    Interface 1:
-    NAT
-
-    Interface 2, 3:
-    Internal Network
-    ``` -->
-    - centrouter
-    ```
-    Interface 1:
-    Bridge
-
-    Interface 2, 3:
-    Internal Network
-    ```
-    - S1, S2
-    ```
-    Interface 1:
-    Internal Network
-    ```
-
-    - C1
-    ```
-    Interface 1:
-    Internal Network
-    ```
----
+- Hostname  
+C1  
+`c1.s11361213.mcu.edu.tw`  
+C2  
+`c2.s11361213.mcu.edu.tw`  
 
 ## Linux Configuration
 

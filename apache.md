@@ -4,7 +4,7 @@
 
 `systemctl enable httpd`
 
-`/var/www/html`
+`/var/www/html/`
 
 ---
 
@@ -51,3 +51,29 @@ dnf install php php-fpm php-mysqlnd php-opcache \
 php-gd php-ldap php-odbc php-pear php-xml php-mbstring \
 php-snmp php-soap curl curl-devel
 ```
+
+#### Test PHP
+`/var/www/html/info.php`
+```php
+<?php
+phpinfo();
+>
+```
+
+---
+
+### Install MariaDB
+`dnf install mariadb-server mariadb`
+`mysql_secure_installation`
+
+#### Test MariaDB
+`mysql -u root -p`
+
+---
+
+### Install phpMyAdmin
+- wget [phpmyadmin](https://www.phpmyadmin.net/files/)
+
+- `tar -vxzf <phpMyAdmin>.tar.gz`
+
+- `mv <phpMyAdmin> /usr/share/phpmyadmin/`

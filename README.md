@@ -55,6 +55,6 @@ flowchart RL
 | -- |-- | -- |
 | Router | Firewall, DNS, DHCP Relay | `firewalld`, `named`, `dhcrelay` |`
 | S1 | DHCP | `dhcpd` |
-| S2 | Apache | `httpd`, `httpd-tools` |
+| S2 | Apache, PHP, MariaDB | `httpd`, `httpd-tools`, `php-fpm`, `mariadb` |
 | C1 | None (client) | |
 | C2 | None (client) | |

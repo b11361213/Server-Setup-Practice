@@ -1,7 +1,7 @@
-# Server-Setup-Pratice
+# Server-Setup-Practice
 36363-36465開源網路伺服器架設實務 
 
-## Structure Diagram
+## Architecture Diagram
 
 ```mermaid
 flowchart RL
@@ -55,6 +55,6 @@ flowchart RL
 | -- |-- | -- |
 | Router | Firewall, DNS, DHCP Relay | `firewalld`, `named`, `dhcrelay` |`
 | S1 | DHCP | `dhcpd` |
-| S2 | Apache, PHP, MariaDB | `httpd`, `httpd-tools`, `php-fpm`, `mariadb` |
+| S2 | Apache, PHP, MariaDB | `httpd`, `php-fpm`, `mariadb` |
 | C1 | None (client) | |
 | C2 | None (client) | |

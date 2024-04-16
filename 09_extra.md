@@ -21,7 +21,8 @@ installed, using service list:
 ```
 firewalld ->
 named ->
-dhcp, dhcrelay, rsyslog
+dhcpd, dhcrelay, rsyslog ->
+httpd, php-fpm, mariadb
 ```
 
 ---

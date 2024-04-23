@@ -132,7 +132,23 @@ Alias /phpmyadmin /var/www/html/phpMyAdmin
 </VirtualHost>
 ```
 
+---
+
 `/etc/httpd/conf.d/userdir.conf`  
 ```
 UserDir www
+
+<Directory "/home/*/www">
 ```
+
+- `mkdir ~/www~`  
+
+- `chmod 755 ~/www`  
+
+- `chmod 711 ~`  
+
+- setsebool -P httpd_enable_homedirs=1
+
+- restorecon -Rv /home/
+
+- `ln -s /home/s2-guest/www /var/www/html/s2-guest`

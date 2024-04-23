@@ -76,4 +76,63 @@ phpinfo();
 
 - `tar -vxzf <phpMyAdmin>.tar.gz`
 
-- `mv <phpMyAdmin> /usr/share/phpmyadmin/`
+- `mv <phpMyAdmin> /var/www/html/phpMyAdmin`
+
+config.inc.php
+```
+$cfg['blowfish_secret'] = 'passwd';
+```
+
+#### Create Database for phpMyAdmin
+Enter mysql shell  
+`mysql -u root -p`
+
+Create DB  
+`CREATE DATABASE phpmyadmin;`
+
+Create Table  
+`mysql -u root -p phpmyadmin < [phpmyadmin/sql/]create_tables.sql`
+
+---
+
+## Apache phpMyAdmin config
+`/etc/httpd/conf.d/phpmyadmin.conf`  
+```
+Alias /phpmyadmin /var/www/html/phpMyAdmin
+
+<Directory /var/www/html/phpMyAdmin>
+  AddDefaultCharset UTF-8
+
+  <IfModule mod_authz_core.c>
+    <RequireAny>
+      Require all granted
+    </RequireAny>
+  </IfModule>
+  
+  <IfModule !mod_authz_core.c>
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+  </IfModule>
+
+</Directory>
+
+```
+
+`/etc/httpd/virtualhost.conf`  
+```
+<VirtualHost *.80>
+
+  ServerAdmin webmaster@s11361213.mcu.edu.tw
+  DocumentRoot /var/www/html/phpMyAdmin
+  ServerName phpmyadmin.s11361213.mcu.edu.tw
+  ErrorLog logs/phpmyadmin-error_log
+  CustomLog logs/phpmyadmin-access_log common
+
+</VirtualHost>
+```
+
+`/etc/httpd/conf.d/userdir.conf`  
+```
+UserDir www
+```

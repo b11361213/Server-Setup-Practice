@@ -45,6 +45,7 @@ s1                                  IN                  A               192.168.
 s2                                  IN                  A               192.168.2.1
 
 www                                 IN                  A               192.168.2.1
+phpmyadmin                          IN                  A               192.168.2.1
 
 ```
 

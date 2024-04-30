@@ -79,7 +79,7 @@ ssh [username] @ [IP address]
 ---
 
 - `vim`
-    - `:voh`: turn off highlighting  
+    - `:noh`: turn off highlighting  
     [highlight - Vim clear last search highlighting - Stack Overflow](https://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting/657457#657457)
 
     - `:set nu`: turn on number display
@@ -89,6 +89,16 @@ ssh [username] @ [IP address]
 - `dnf`  
     - `install`: install packages  
     - `-y`: automatically answer yes for all questions  
+
+---
+
+- `netstat`
+    - `netstat -tulnp | grep <port>`
+    - `-tu`: select TCP and UDP
+
+---
+
+`/etc/services`: show services used ports  
 
 ---
 

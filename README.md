@@ -35,7 +35,7 @@ flowchart RL
     
     subgraph net-1
     S1(
-        DHCP
+        DHCP, vsFTPd
         S1)
     C1(
         C1)
@@ -54,7 +54,7 @@ flowchart RL
 | Host | Service | Service name |
 | -- |-- | -- |
 | Router | Firewall, DNS, DHCP Relay | `firewalld`, `named`, `dhcrelay` |`
-| S1 | DHCP | `dhcpd` |
+| S1 | DHCP vsFTPd | `dhcpd` `vsftpd` |
 | S2 | Apache, PHP, MariaDB | `httpd`, `php-fpm`, `mariadb` |
 | C1 | None (client) | |
 | C2 | None (client) | |

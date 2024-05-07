@@ -11,7 +11,7 @@ listen=YES
 # listen_ipv6=YES
 ```
 
-## Login FTP from remote
+## Login FTP from other PC
 other PC
 ```
 ftp <remote FTP IP>

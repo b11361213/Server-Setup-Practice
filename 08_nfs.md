@@ -5,7 +5,7 @@
 `etc/exports`
 
 ```
-/tmp  *(rw,no_root_squash)
+/tmp    192.168.1.0/16(rw,no_root_squash)
 ```
 
 ---

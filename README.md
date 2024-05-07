@@ -37,7 +37,7 @@ flowchart RL
     
     subgraph net-1
     S1(
-        DHCP, vsFTPd, NFS
+        DHCP, vsFTPd, NFS, Samba
         S1
         192.168.1.1)
     C1(
@@ -60,7 +60,7 @@ flowchart RL
 | Host | Service | Service name |
 | -- |-- | -- |
 | Router | Firewall, DNS, DHCP Relay | `firewalld`, `named`, `dhcrelay` |`
-| S1 | DHCP, vsFTPd, RPC, NFS | `dhcpd`, `vsftpd`, `rpcbind`, `nfs-utils` |
+| S1 | DHCP, vsFTPd, RPC, NFS, Samba | `dhcpd`, `vsftpd`, `rpcbind`, `nfs-utils`, `samba` |
 | S2 | Apache, PHP, MariaDB | `httpd`, `php-fpm`, `mariadb` |
 | C1 | None (client) | |
 | C2 | None (client) | |

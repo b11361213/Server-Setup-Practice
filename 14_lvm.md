@@ -28,6 +28,7 @@ mount [source_path] [target_path]
 
 ---
 
+## LVM usage
 ### LVM create PV, VG, LV
 
 Use gdisk create 4 section
@@ -112,3 +113,12 @@ $ pvcreate /dev/sdc1
 $ vgextend myvg_1 /dev/sdc1
 $ vgdisplay myvg_1
 ```
+
+---
+
+### Disable and remove LVM
+1. `/etc/fstab`: comment or delete auto mount record
+2. umount `/srv/lvm`
+3. `vgchange --activate n myvg_1`, and `lvscan` confirm that the VG has been deactivated
+4. `vgremove myvg_1`
+6. `pvscan`, `pvremove /dev/sdb{1..4}`

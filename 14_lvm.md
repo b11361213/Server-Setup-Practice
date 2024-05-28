@@ -22,6 +22,10 @@ VG ==> LG + LG...
 disk location 
 `/dev/sd...`
 
+```
+mount [source_path] [target_path]
+```
+
 ---
 
 ### LVM create PV, VG, LV
@@ -74,13 +78,37 @@ $ vim /etc/fstab
 ```
 `/etc/fstab`
 ```
-/dev/myvg_1/mylv_2      /srv/lvm_ext4       xfs         defaults        0 0
+/dev/myvg_1/mylvm_2         /srv/lvm_ext4       ext4        defaults        0 0
+```
+```
+mount -a
+systemctl daemon-reload
 ```
 
 ---
 
+### LV resize add volume
 ```
-mount -a
-mount [source_path] [target_path]
-control-deamon
+$ lvscan
+$ vgdisplay myvg_1
+$ lvresize -l +21 /dev/myvg_1/mylv_2
+$ resize2fs /dev/myvg_1/mylv_2
+```
+
+### LV resize reduce volume
+```
+lvreduce --resizefs -L 256M /dev/myvg_1/mylv_2
+```
+
+---
+
+### Extend VG size
+```
+$ gdisk /dev/sdc
++500M
+8e00
+
+$ pvcreate /dev/sdc1
+$ vgextend myvg_1 /dev/sdc1
+$ vgdisplay myvg_1
 ```

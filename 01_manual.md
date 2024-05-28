@@ -322,8 +322,10 @@ net.ipv4.ip_forward = 1
 | `echo >>` | Append content to file |
 | `more` | |
 | `less` | |
+| `head -n` | |
+| `tail -n` | |
+| `grep <keyword> -B <before_n_lines> -A <after_n_lines>` | Filter output |
 | `vim` | Open vim editor |
-| `grep <keyword>` | Filter output |
 | `chmod` | Change file permission |
 
 ---

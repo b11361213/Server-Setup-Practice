@@ -61,6 +61,7 @@ flowchart RL
 | -- |-- | -- |
 | Router | Firewall, DNS, DHCP Relay | `firewalld`, `named`, `dhcrelay` |`
 | S1 | DHCP, vsFTPd, RPC, NFS, Samba | `dhcpd`, `vsftpd`, `rpcbind`, `nfs-utils`, `samba` |
+| S1 | mdadm(raid), LVM, Quota, iSCSI | |
 | S2 | Apache, PHP, MariaDB | `httpd`, `php-fpm`, `mariadb` |
 | C1 | None (client) | |
 | C2 | None (client) | |
